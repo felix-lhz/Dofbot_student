@@ -1,5 +1,3 @@
-
-
 from dofbot import DofbotEnv
 import numpy as np
 import time
@@ -9,17 +7,16 @@ import time
 import math
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     env = DofbotEnv()
     env.reset()
     Reward = False
 
-
-    '''
+    """
     constants here
-    '''
-    GRIPPER_DEFAULT_ANGLE = 20. / 180. * 3.1415
-    GRIPPER_CLOSE_ANGLE = -20. / 180. * 3.1415
+    """
+    GRIPPER_DEFAULT_ANGLE = 20.0 / 180.0 * 3.1415
+    GRIPPER_CLOSE_ANGLE = -20.0 / 180.0 * 3.1415
 
     # define state machine
     INITIAL_STATE = 0
@@ -30,8 +27,7 @@ if __name__ == '__main__':
     BACK_STATE = 5
     current_state = INITIAL_STATE
 
-
-    initial_jointposes = [1.57, 0., 1.57, 1.57, 1.57]
+    initial_jointposes = [1.57, 0.0, 1.57, 1.57, 1.57]
 
     # offset to grasp object
     obj_offset = [-0.023, -0.023, 0.09]
@@ -44,15 +40,12 @@ if __name__ == '__main__':
 
     while not Reward:
 
-
-
-        '''
+        """
         #获取物块位姿、目标位置和机械臂位姿，计算机器臂关节和夹爪角度，使得机械臂夹取绿色物块，放置到紫色区域。
-        '''
+        """
 
-        '''
+        """
         code here
-        '''
-
+        """
 
         Reward = env.reward()
